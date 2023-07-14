@@ -1,0 +1,183 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background-color: #f5f8ff;
+  }
+  
+  #categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+  }
+  
+  .category-button {
+    border: 2px solid #6759ff;
+    padding: 1em 2.2em;
+    border-radius: 3em;
+    background-color: transparent;
+    color: #6759ff;
+    cursor: pointer;
+  }
+  
+  .active {
+    background-color: #3c42b6;
+    color: #ffffff;
+  }
+  
+  #books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .category-container {
+    flex-basis: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+    display: none;
+  }
+  
+  .category-container.active {
+    display: block;
+  }
+  .category-container::-webkit-scrollbar {
+    height: 8px;
+  }
+  
+  .category-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
+  
+  .category-container::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  
+  .book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 20px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+  
+  .card {
+    background-color: #ffffff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+    background-color: #ffffff;
+    min-width: 200px;
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+  }
+  
+  .image-container {
+    text-align: center;
+  }
+  
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 150px;
+  }
+  
+  .container {
+    padding-top: 1em;
+    color: #110f29;
+  }
+  
+  .hide {
+    display: none;
+  }
+  .image-error {
+    background-color: #f5f5f5;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 600px) {
+    .category-container {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+    }
+  
+    .book-grid {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 10px;
+      overflow-x: auto;
+    }
+  }
+  /* Book Details Popup */
+  /* Your existing CSS code here */
+
+  .popup {
+    display: none; /* Hide the popup by default */
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup.show {
+    display: flex; /* Show the popup when the "show" class is added */
+  }
+  
+  #popupContent {
+    position: relative;
+    background-color: #ffffff;
+    padding: 20px;
+    max-width: 400px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  #closePopup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  
+  #bookDetails {
+    margin-top: 20px;
+  }
+  
+  /* Positioning the popup on the side */
+  @media screen and (max-width: 720px) {
+    .popup {
+      right: -200px; /* Adjust the value to control the position of the popup on smaller screens */
+      width: 200px;
+    }
+  
+    .popup.show {
+      right: 0;
+    }
+  }
+  
