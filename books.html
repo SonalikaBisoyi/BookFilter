@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books Homepage</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="books.css" />
+</head>
+<body>
+  <div id="categories">
+    <button class="category-button" onclick="filterBooks('all')">All</button>
+    <button class="category-button" onclick="filterBooks('Fiction')">Fiction</button>
+    <button class="category-button" onclick="filterBooks('Classics')">Classics</button>
+    <button class="category-button" onclick="filterBooks('Fantasy')">Fantasy</button>
+    <button class="category-button" onclick="filterBooks('Comedy')">Comedy</button>
+    <button class="category-button" onclick="filterBooks('SelfHelp')">SelfHelp</button>
+    <button class="category-button"onclick="filterBooks('Action-and-Adventure')">Action-and-Adventure</button>
+    <button class="category-button" onclick="filterBooks('GraphicNovel')">GraphicNovel</button>
+    <button class="category-button" onclick="filterBooks('Detective-and-Mystery')">Detective-and-Mystery</button>
+    <button class="category-button" onclick="filterBooks('Romance')">Romance</button>
+    <button class="category-button" onclick="filterBooks('Biographies-and-Autobiographies')">Biographies-and-Autobiographies</button>
+    <button class="category-button" onclick="filterBooks('Cookbooks')">Cookbooks</button>
+  </div>
+  <div id="bookDetailsPopup" class="popup">
+    <div id="popupContent">
+      <span id="closePopup" >×</span>
+      <div id="bookDetails"></div>
+    </div>
+  </div>
+
+  <div id="books"></div>
+
+  <script src="books.js"></script>
+</body>
+</html>
